@@ -26,12 +26,12 @@ If you do not have an IBM Cloud account, create an account [here](https://ibm.bi
 - A Lite account, which is a free of charge. Make sure to set the region to US South.
 
 ### Create a Watson Studio service instance
-If you don't have a **watson Studio** instance, do the following:
+If you don't have a **Watson Studio** instance, do the following:
 
 1. Select Catalog found at the top right of the page.
-2. Click on Watson from the menu on the left, which you can find under Platform services.
+2. Click on **Watson** from the menu on the left, which you can find under Platform services.
 3. Select Browse Services under **Watson Services**.
-4. Choose **watson Studio** instance
+4. Choose **Watson Studio** instance
 <p align="center"><img width="947" alt="untitled" src="https://user-images.githubusercontent.com/20974667/48708706-50914980-ec14-11e8-8768-23092ab0b330.png"> 
  
 * Once the main page of the service appears, click on Get Started. This will redirect your browser to the Watson Studio platform. It might ask to confirm IBM Cloud organization and space information.
@@ -73,12 +73,12 @@ The columns are converted to **decimanl** are Age and Fare.
 ![](https://user-images.githubusercontent.com/20974667/47091437-8dd97480-d22d-11e8-9d71-42991bfa8f50.png)
 
 
-## missing values
+## Missing Values
 
 The columns that have missing values in Titanic dataset are Age, Cabin and Embarked.
 The methods to fulfill the missing values are different for each attribute depending on the purpose of the attribute.
 
-So, to fill the missing values in **Embarked** attribute, we only fill it with 'S' knwong that the passengers actually embarked at Southampton.
+So, to fill the missing values in the **Embarked** attribute, we only fill it with 'S' knowing that the passengers actually embarked at Southampton.
 
 
 For **Cabin** attribute, since tracing the actual cabin for each passenger is impossible. Handling this attribute by creating additional column that has 1 for a passenger who's cabin exists and 0 if it does not exist. Relating to the accident, known passenger's cabin indicate that they survived. To do that follow the below steps:
@@ -88,7 +88,7 @@ For **Cabin** attribute, since tracing the actual cabin for each passenger is im
 
 ![](https://user-images.githubusercontent.com/20974667/47149880-8a9dc180-d2dd-11e8-91df-a0842297957d.png)
 
-* Add two conditions in Cabin's column, if value **empty** replace it with 0, if not empty replace with 1.
+* Add two conditions in Cabin's column, if value is **empty** replace it with 0, if its not empty replace with 1.
 
 ![](https://user-images.githubusercontent.com/20974667/47149881-8b365800-d2dd-11e8-8c2c-a7b188baccfb.png)
 
@@ -97,7 +97,7 @@ For **Cabin** attribute, since tracing the actual cabin for each passenger is im
 ![](https://user-images.githubusercontent.com/20974667/47149882-8b365800-d2dd-11e8-9a94-510c9ef03323.png)
 
 
-For **age** attribute, calculate the mean of the column values and placing it in the null values.
+For **Age** attribute, calculate the mean of the column values and place it in the null values.
 To replace missing values by the mean of the column, do the following:
 1. From the Actions menu choose **Filter condition**.
 
@@ -111,14 +111,13 @@ To replace missing values by the mean of the column, do the following:
 
 ![](https://user-images.githubusercontent.com/20974667/47507775-804e6b00-d87b-11e8-9da8-78bff22d0d6e.png)
 
-4. Fill in the operation command the required variables like this Summarize(newVarName=operator(column))
-`summarize(newAge= mean(``Age``))`
+4. Fill in the operation command the required variables by writing `summarize(newAge= mean(``Age``))`
 ![](https://user-images.githubusercontent.com/20974667/47507779-80e70180-d87b-11e8-9368-11a260cbbc1b.png)
 
 ![](https://user-images.githubusercontent.com/20974667/47507776-80e70180-d87b-11e8-802c-1dc37cfc58ee.png)
 
-5. Copy the geneated value to use after, and undo last two action from the backward arrow above.
-Since the filteration and the new summerized value is now useless.
+5. Copy the geneated value to use after and undo last two action from the backward arrow above,
+since the filteration and the new summerized value is now useless.
 
 ![](https://user-images.githubusercontent.com/20974667/47641516-5a74df00-db77-11e8-9d95-cbabda71f10a.png)
 
@@ -129,7 +128,7 @@ Since the filteration and the new summerized value is now useless.
 Insert the mean value to be replaced with and press _Apply_ button.
 ![](https://user-images.githubusercontent.com/20974667/47641669-b8092b80-db77-11e8-9478-0aa572041a60.png)
 
- ## duplicates
+ ## Duplicates
 
 Titanic data set does not have sensitive information that should be unique except for the passenger ID. Simply select the Action menu in **Passenger Id** column and choose **Remove duplicates**.
 
